@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuan Creative — Studio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="asset/favicon.png">
+  <link rel="stylesheet" href="transitions.css">
+  <link rel="stylesheet" href="responsive-fixes.css">
+  <link rel="stylesheet" href="section-layout.css">
+</head>
+<body>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ===================== LOADER ===================== -->
+<div id="loader">
+  <div class="loader-inner">
+    <video class="loader-video" autoplay muted loop playsinline>
+      <source src="asset/logo.mp4" type="video/mp4">
+    </video>
+    <p class="loader-logo">YUAN CREATIVE © STUDIO</p>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
+
+<!-- ===================== CURSOR ===================== -->
+<div class="cursor"><span class="cursor-inner">¥</span></div>
+<div class="cursor-follower"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="header">
+  <a class="nav-logo">
+    <span class="nav-logo-text">YUAN CREATIVE © STUDIO</span>
+  </a>
+ 
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="menu-toggle-text">
+      <span class="mt-word mt-word--menu">MENU</span>
+    </span>
+    <span class="menu-toggle-pip"></span>
+  </button>
+</header>
+ 
+<!-- ===================== FULLSCREEN MENU ===================== -->
+<div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+ 
+  <!-- Two-panel curtain (CSS ::before / ::after handle them) -->
+ 
+  <div class="menu-body">
+ 
+    <!-- Primary nav -->
+    <nav class="menu-nav" aria-label="Site navigation">
+      <ul>
+        <li class="menu-item">
+          <a href="#hero" class="menu-link" data-index="01">
+            <span class="ml-index">01</span>
+            <span class="ml-label">Home</span>
+            <span class="ml-arrow">↗</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#project" class="menu-link" data-index="02">
+            <span class="ml-index">02</span>
+            <span class="ml-label">Project</span>
+            <span class="ml-arrow">↗</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#archive" class="menu-link" data-index="03">
+            <span class="ml-index">03</span>
+            <span class="ml-label">Archive</span>
+            <span class="ml-arrow">↗</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#about" class="menu-link" data-index="04">
+            <span class="ml-index">04</span>
+            <span class="ml-label">About Me</span>
+            <span class="ml-arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+ 
+    <!-- Sidebar meta -->
+    <aside class="menu-aside">
+      <div class="menu-aside-block">
+        <p class="menu-aside-label">Social</p>
+        <a href="https://instagram.com/_yuancedrick" target="_blank" class="menu-aside-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/yuan-cedrick-ramos-826417272/" target="_blank" class="menu-aside-link">LinkedIn</a>
+      </div>
+      <div class="menu-aside-block">
+        <p class="menu-aside-label">Based in</p>
+        <p class="menu-aside-value">Manila, Philippines</p>
+        <div class="menu-availability">
+          <span class="nav-dot"></span>
+          <span>Available for work</span>
+        </div>
+      </div>
+      <p class="menu-tagline">Crafting identities<br>between idea and form.</p>
+    </aside>
+ 
+  </div>
+</div>
+
+<!-- ===================== PARTICLES ===================== -->
+<div id="particles-bg"></div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" class="hero">
+  
+<video class="hero-bg-video" autoplay muted loop playsinline>
+  <source src="asset/bg-hero-animation.mp4" type="video/mp4">
+</video>
+
+  <!-- Corner label -->
+  <div class="hero-corner-label">
+    <span class="hero-corner-tag">Based in</span>
+    <span class="hero-corner-location">Manila, Philippines</span>
+      <div class="nav-availability"><span class="nav-dot"></span>Available For Work</div>
+  </div>
+
+  <!-- Big headline -->
+  <div class="hero-headline">
+    <div class="headline-line">
+      <span class="headline-main" data-delay="0.05">Yuan</span>
+               <span class="headline-italic" data-delay="0.15">*</span>
+    </div>
+    <div class="headline-line">
+      <span class="headline-main" data-delay="0.22">Creative<em>®</em></span>
+    </div>
+    <div class="headline-line">
+      <span class="headline-italic" data-delay="0.30">*</span>
+      <span class="headline-main" data-delay="0.38">Studio.</span>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>Graphic Designer &amp; Creative Director</strong><br>
+      Brand identities, digital experiences,<br>
+      and visual systems that resonate.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="hero-btn primary">
+        <span class="btn-text">View Projects</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#about" class="hero-btn secondary">
+        <span>Get in touch</span>
+      </a>
+    </div>
+  </div>
+ 
+</section>
+
+<!-- ===================== TICKER ===================== -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">Brand Identity <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Art Direction <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Apparel Design <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Web Design <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Front-End Dev <span class="ticker-dot"></span></div>
+    <div class="ticker-item">UI/UX Design <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Brand Identity <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Art Direction <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Apparel Design <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Web Design <span class="ticker-dot"></span></div>
+    <div class="ticker-item">Front-End Dev <span class="ticker-dot"></span></div>
+    <div class="ticker-item">UI/UX Design <span class="ticker-dot"></span></div>
+  </div>
+</div>
+
+<!-- ===================== HERO INFO STRIP ===================== -->
+<div class="hero-info-strip">
+  <div class="info-col">
+    <span class="info-label">Status</span>
+    <span class="info-value">Open for work</span>
+    <span class="info-meta">Accepting new projects · 2026</span>
+  </div>
+  <div class="info-col">
+    <span class="info-label">Speciality</span>
+    <span class="info-value">Brand &amp; Digital</span>
+    <span class="info-meta">Concept → Final output</span>
+  </div>
+  <div class="info-col">
+    <span class="info-label">Selected clients</span>
+    <span class="info-value">Roughsaint</span>
+    <span class="info-meta">Philippines · 2024–2026</span>
+  </div>
+</div>
+
+<!-- ===================== PROJECTS — SHOWCASE GRID ===================== -->
+<section class="projects" id="projects">
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-label">— Selected Work</div>
+      <h1 class="section-title">
+        <span class="line-mask"><span class="reveal-word">Projects</span></span>
+      </h1>
+    </div>
+    <div class="section-header-right">
+      <p class="section-desc">A curated selection of brand identities, digital experiences, and visual systems crafted with intention.</p>
+    </div>
+  </div>
+
+  <!-- 4-card showcase grid -->
+  <div class="projects-showcase">
+
+    <!-- Card 01 -->
+    <div class="showcase-card" data-index="0"
+      data-mockups="projects/roughsaint-thumbnail.png"
+      data-title="ROUGHSAINT"
+      data-year="2025"
+      data-category="Merch Design"
+      data-description="I designed and produced a series of t-shirts and a sticker pack for Roughsaint, focusing on raw, unfiltered visual expression. Each piece was created from concept to final output—translating graphic ideas into wearable prints and collectible stickers. The goal was to create something that feels worn, expressive, and real, while still being clean enough to exist in a modern streetwear space."
+      data-tags="Merch Design,Art Direction">
+      <div class="sc-image-wrap">
+        <img src="projects/roughsaint-thumbnail.png" alt="Roughsaint Brand" class="sc-img">
+        <div class="sc-overlay"></div>
+      </div>
+      <div class="sc-meta">
+        <span class="sc-number">01</span>
+        <span class="sc-cat">Merch Design</span>
+      </div>
+      <div class="sc-title-wrap">
+        <h2 class="sc-title">ROUGHSAINT</h2>
+        <span class="sc-year">2025</span>
+      </div>
+      <div class="sc-open-btn"><span>+</span></div>
+    </div>
+
+    <!-- Card 02 -->
+    <div class="showcase-card" data-index="1"
+      data-mockups="projects/chrono-one-thumbnail.png,projects/chrono-one-project-vid.mp4,projects/chrono-one-project.png"
+      data-title="Chrono One"
+      data-year="2025"
+      data-category="Web Development"
+      data-description="I designed and developed the front-end of a website for Chrono One Logistic Trading Company, including the full landing page experience. The project focused on creating a clean, functional, and user-friendly interface, translating business needs into a structured and responsive design using HTML, CSS, and JavaScript."
+      data-tags="Front-End Dev,HTML,CSS,JAVASCRIPT">
+      <div class="sc-image-wrap">
+        <img src="projects/chrono-one-thumbnail.png" alt="Chrono One" class="sc-img">
+        <div class="sc-overlay"></div>
+      </div>
+      <div class="sc-meta">
+        <span class="sc-number">02</span>
+        <span class="sc-cat">Web Development</span>
+      </div>
+      <div class="sc-title-wrap">
+        <h2 class="sc-title">CHRONO ONE</h2>
+        <span class="sc-year">2025</span>
+      </div>
+      <div class="sc-open-btn"><span>+</span></div>
+    </div>
+
+    <!-- Card 03 -->
+    <div class="showcase-card" data-index="2"
+      data-mockups="projects/kape-sinta-project1.png,projects/kape-sinta-project2.png,projects/kape-sinta-project3.png,projects/kape-sinta-project4.png"
+      data-title="KAPE SINTA"
+      data-year="2026"
+      data-category="Brand Identity"
+      data-description="I created a brand identity centered on warmth, connection, and emotional comfort inspired by Filipino café culture. I started by defining the brand concept as a coffee shop that feels personal and heartfelt, then translated this idea into a visual direction that combines cozy, romantic, and modern elements. I explored typography, logo concepts, and a warm color palette to express sincerity and familiarity, ensuring every detail supports the feeling of shared moments over coffee. The final identity presents Kape Sinta as more than just a café it becomes a space that celebrates connection and everyday emotion."
+      data-tags="Brand Identity,Print,Signage">
+      <div class="sc-image-wrap">
+        <img src="projects/kape-sinta-thumbnail.png" alt="kape sinta" class="sc-img">
+        <div class="sc-overlay"></div>
+      </div>
+      <div class="sc-meta">
+        <span class="sc-number">03</span>
+        <span class="sc-cat">Brand Identity</span>
+      </div>
+      <div class="sc-title-wrap">
+        <h2 class="sc-title">KAPE SINTA</h2>
+        <span class="sc-year">2026</span>
+      </div>
+      <div class="sc-open-btn"><span>+</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PROJECT MODAL ===================== -->
+<div id="project-modal" class="pmodal">
+  <div class="pmodal-backdrop"></div>
+  <div class="pmodal-panel">
+    <button class="pmodal-close" aria-label="Close">
+      X
+    </button>
+    <div class="pmodal-inner">
+      <div class="pmodal-info">
+        <div class="pmodal-eyebrow">
+          <span class="pmodal-number"></span>
+          <span class="pmodal-divider">/</span>
+          <span class="pmodal-cat"></span>
+          <span class="pmodal-year"></span>
+        </div>
+        <h2 class="pmodal-title"></h2>
+        <p class="pmodal-desc"></p>
+        <div class="pmodal-tags"></div>
+      </div>
+      <div class="pmodal-visual">
+        <div class="pmodal-slider">
+          <div class="pmodal-slides"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ARCHIVE ===================== -->
+<section class="archive" id="archive">
+  <div class="section-header">
+    <div class="section-header-left">
+      <div class="section-label">— Visual Concept</div>
+      <h1 class="section-title">
+        <span class="line-mask"><span class="reveal-word">Archive</span></span>
+      </h1>
+    </div>
+    <div class="section-header-right">
+      <p class="section-desc">Explorations, experiments, and visual studies that don't fit neatly into a project box.</p>
+    </div>
+  </div>
+
+  <div class="card" id="archive-grid">
+    <div class="card-item" data-cat="apparel" data-title="Roughsaint Tee">
+      <img src="archive/archive4.png" alt="T-Shirt">
+    </div>
+    <div class="card-item" data-cat="apparel" data-title="Roughsaint Hoodie">
+      <img src="archive/archive6.png" alt="Hoodie">
+    </div>
+    <div class="card-item" data-cat="web" data-title="Practice No. 2">
+      <img src="archive/archive5.png" alt="Practice 2">
+    </div>
+    <div class="card-item" data-cat="brand" data-title="Roughsaint Identity">
+      <img src="archive/archive1.png" alt="Roughsaint Brand">
+    </div>
+    <div class="card-item" data-cat="print" data-title="Park'em Parking">
+      <img src="archive/archive2.png" alt="Park'em Parking">
+    </div>
+    <div class="card-item" data-cat="web" data-title="Chrono One">
+      <img src="archive/archive3.png" alt="Chrono One">
+    </div>
+    <div class="card-item" data-cat="web" data-title="Archive 7">
+      <img src="archive/archive7.png" alt="Archive 7">
+    </div>
+    <div class="card-item" data-cat="web" data-title="Archive 8">
+      <img src="archive/archive8.png" alt="Archive 8">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox"><img src="" alt=""></div>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <div class="section-label">— Who I Am</div>
+      <h1 class="about-heading">
+        <span class="line-mask"><span class="reveal-word">About Me</span></span>
+      </h1>
+      <p class="about-statement">
+        Hello👋, I'm Yuan Cedrick Ramos from Philippines — a graphic designer who blends creativity with strategy to design work that not only looks good but communicates, connects, and leaves a lasting impression.
+      </p>
+      <div class="about-details">
+        <p>Creative Graphic Designer crafting bold, modern visuals that communicate and inspire.</p>
+      </div>
+      <div class="about-tags">
+        <span>Brand Identity</span>
+        <span>Art Direction</span>
+        <span>Web Design</span>
+        <span>Front-End Development</span>
+      </div>
+      <div class="about-socials">
+        <a href="https://instagram.com/_yuancedrick" target="_blank" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/yuan-cedrick-ramos-826417272/" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm5 170.2l66.5 0 0 213.8-66.5 0 0-213.8zm71.7-67.7a38.5 38.5 0 1 1 -77 0 38.5 38.5 0 1 1 77 0zM317.9 416l0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2-66.4 0z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-img-wrap">
+        <img src="asset/profile.png" alt="Yuan">
+        <div class="about-img-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>IDEAS INTO ACTION.</h4>
+      <p>Turning challenges into opportunities and ideas into reality.</p>
+    </div>
+    <div class="footer-column">
+      <h4>LINKS</h4>
+      <a href="#projects">Projects</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-column">
+      <h4>CONTACT</h4>
+      <a href="mailto:ramos.yuancedrick@gmail.com">Email</a>
+      <a href="https://instagram.com/_yuancedrick" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/yuan-cedrick-ramos-826417272/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <h2 class="bigtext">YUAN CREATIVE</h2>
+  <div class="footer-bottom">
+    <p>© 2026 Yuan CREATIVE. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="main.js"></script>
+<script src="transitions.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    gsap.utils.toArray(".section-desc").forEach(el => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none reverse" }
+      });
+    });
+  });
+</script>
+</body>
+</html>
