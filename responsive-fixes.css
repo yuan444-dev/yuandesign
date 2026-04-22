@@ -1,0 +1,324 @@
+/* =========================
+   RESPONSIVE-FIXES.CSS
+   Link AFTER style.css and transitions.css
+========================= */
+
+/* ─────────────────────────────────────────
+   TOUCH / MOBILE — hide custom cursor
+   On touch devices the cursor elements are
+   hidden and body cursor is restored to auto
+───────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+
+  body,
+  *, *:hover, *:active, *:focus {
+    cursor: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   HAMBURGER BUTTON
+   Hidden on desktop, shown on mobile
+───────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 10001;
+  position: relative;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1),
+              opacity 0.3s ease,
+              width 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { width: 24px; }
+.hamburger span:nth-child(2) { width: 16px; }
+.hamburger span:nth-child(3) { width: 20px; }
+
+/* Open state */
+.hamburger.open span:nth-child(1) {
+  width: 22px;
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  width: 22px;
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────
+   MOBILE NAV DRAWER
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hide hamburger button */
+  .hamburger {
+    display: none !important;
+  }
+
+  /* Show nav-right normally */
+  .nav-right {
+    display: flex !important;
+  }
+
+  /* Compact navbar menu on mobile */
+  nav, .navbar-menu {
+    gap: 16px !important;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    font-size: 11px !important;
+    letter-spacing: 0.06em !important;
+    opacity: 0.7 !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transform: none !important;
+  }
+
+  .nav-link:hover {
+    opacity: 1 !important;
+    color: var(--pink) !important;
+  }
+
+  .nav-availability {
+    font-size: 9px !important;
+    gap: 4px !important;
+  }
+
+  /* Keep header layout tight */
+  header {
+    padding: 12px 6% !important;
+  }
+
+  .nav-logo {
+    height: 32px !important;
+    gap: 6px !important;
+  }
+
+  .nav-logo-text {
+    font-size: 12px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .nav-logo video {
+    height: 32px !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   HEADER — general fixes
+───────────────────────────────────────── */
+header {
+  /* Ensure logo + nav never overflow */
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.logo {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* ─────────────────────────────────────────
+   TABLET — navbar adjustments
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  header {
+    padding: 14px 6% !important;
+    height: auto !important;
+  }
+
+  nav, .navbar-menu {
+    gap: 24px !important;
+  }
+
+  .nav-link {
+    font-size: 11px !important;
+  }
+
+  .nav-availability {
+    font-size: 10px !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   HERO — mobile
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-tagline .reveal-word {
+    font-size: clamp(38px, 10vw, 60px);
+  }
+
+  .hero-scroll-hint { left: 6%; bottom: 24px; }
+  .hero-meta { display: none; }
+
+  .hero-cta { margin-top: 8px; }
+
+  .cta-btn {
+    padding: 12px 24px;
+    font-size: 10px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   PROJECTS — mobile
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .project-item {
+    grid-template-columns: 36px 1fr auto;
+    gap: 10px;
+    padding: 18px 0;
+  }
+
+  .project-cat,
+  .project-year {
+    display: none;
+  }
+
+  .project-name {
+    font-size: clamp(22px, 6vw, 36px);
+  }
+
+  .project-dropdown-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0 32px 0;
+  }
+
+  .project-preview { display: none !important; }
+}
+
+/* ─────────────────────────────────────────
+   ARCHIVE — mobile
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    columns: 2;
+    column-gap: 10px;
+    margin: 0 auto;
+  }
+
+  .filter-bar {
+    width: 90%;
+    gap: 6px;
+    margin: 0 auto;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    columns: 1;
+    width: 92%;
+    margin: 0 auto;
+  }
+}
+
+/* ─────────────────────────────────────────
+   ABOUT — mobile
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-heading {
+    font-size: clamp(48px, 12vw, 80px);
+    margin-bottom: 20px;
+  }
+
+  .about-statement {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+
+  /* Stack visual below text on mobile */
+  .about-visual {
+    order: -1;
+  }
+
+  .about-img-wrap img {
+    height: 280px;
+    object-fit: cover;
+  }
+}
+
+/* ─────────────────────────────────────────
+   FOOTER — mobile
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 28px;
+    padding: 0 6% 40px;
+  }
+
+  .bigtext {
+    font-size: 20vw;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (max-width: 480px) {
+  .bigtext { font-size: 16vw; }
+
+  .footer-bottom {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 16px 6% 24px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   SECTION PADDING — mobile
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  section {
+    padding: 100px 6% 60px;
+  }
+
+  .section-title {
+    font-size: clamp(44px, 10vw, 72px);
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 90px 5% 48px;
+  }
+}

@@ -1,0 +1,102 @@
+/* =========================
+   TRANSITIONS.CSS v2 — ZOOM EDITION
+   Link after style.css
+========================= */
+
+/* ── SCROLL PROGRESS BAR ── */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 2px;
+  height: 0%;
+  background: var(--pink);
+  z-index: 999999;
+  pointer-events: none;
+  will-change: height;
+  transition: height 0.08s linear;
+}
+
+/* ── PAGE TRANSITION COLUMNS ── */
+#zt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999998;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.zt-col {
+  background: #1a1a1a;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+/* ── SECTION OVERFLOW FOR ZOOM CLIPPING ── */
+.projects,
+.archive,
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── ABOUT IMAGE ── */
+.about-img-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── CHAR SPLIT ── */
+.char-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: inherit;
+}
+
+.char-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+  font-style: normal;
+}
+
+/* ── NAV HOVER — vertical slide duplicate ── */
+.nav-link {
+  overflow: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  padding-bottom: 2px !important;
+}
+
+.nav-link .nl-front,
+.nav-link .nl-back {
+  display: block;
+  transition: transform 0.42s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.nav-link .nl-back {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: var(--pink);
+}
+
+.nav-link:hover .nl-front { transform: translateY(-110%); }
+.nav-link:hover .nl-back  { transform: translateY(-110%); }
+.nav-link::after { display: none !important; }
+
+/* ── CARD ZOOM CURTAIN ── */
+.card-zoom-curtain {
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  z-index: 10;
+  pointer-events: none;
+  transform-origin: bottom;
+  will-change: transform;
+}
+
