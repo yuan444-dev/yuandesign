@@ -996,8 +996,8 @@ section {
 
 .sc-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(28px, 3.5vw, 52px);
-  font-weight: 700;
+  font-size: clamp(15px, 1.5vw, 22px);
+  font-weight: 200;
   letter-spacing: -0.02em;
   line-height: 1;
   color: var(--white);
